@@ -73,6 +73,7 @@ class RunmyphpoutputCommand(sublime_plugin.TextCommand):
 			panel.set_syntax_file('Packages/Text/Plain text.tmLanguage')
 			panel.insert(self.edit, panel.size(), title + "\n" + output)
 			panel.set_read_only(True)
+			panel.show(panel.size())
 			self.view.window().run_command("show_panel", {"panel": "output." + panel_name})
 		else:
 			self.view.window().show_input_panel(title, output, None, None, None)
