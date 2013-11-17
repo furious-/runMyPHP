@@ -35,7 +35,7 @@ The following settings are available and optional, but the default settings shou
 		"php_path": "YOUR_PHP_BINARY_PATH",
 	}
 
-**php_path**: The path to your PHP binary (fallback: "php"-call)
+**php_path**: The FULL path to your PHP binary (for portable, just remove the drive letter)
 
 ## Usage
 If the PHP syntax is active, select the piece of code you want to get an output from, or if you want the whole file be used left the selection blank, and press this shortcut:
