@@ -43,12 +43,17 @@ The following settings are available and are optional, but the default settings 
 ## Usage
 This plugin only works when the PHP syntax is active, check bellow the shortcuts, or use the context menu with rightclick:
 
-	**Ctrl+Shift+X** - Execute the selected piece of code or the entire code.
-	**Ctrl+Shift+Alt+X** - Same above, but execute the entire code instead.
-	**Ctrl+Shift+C** - Execute the current opened file. (It will warn you to save the file if it was changed before execute)
-	**Ctrl+Shift+L** - Check the for Syntax errors in the selected or entire code.
-	**Ctrl+Shift+Alt+L** - Same above, but ignores selection and uses the entire code instead.
-	**Ctrl+Shift+Alt+C** - Same thing above, but this time uses the current opened file for Syntax-check
+> **Ctrl+Shift+X** - Execute the selected piece of code or the entire code.
+
+> **Ctrl+Shift+Alt+X** - Same above, but execute the entire code instead.
+
+> **Ctrl+Shift+C** - Execute the current opened file. (It will warn you to save the file if it was changed before execute)
+
+> **Ctrl+Shift+L** - Check the for Syntax errors in the selected or entire code.
+
+> **Ctrl+Shift+Alt+L** - Same above, but ignores selection and uses the entire code instead.
+
+> **Ctrl+Shift+Alt+C** - Same thing above, but this time uses the current opened file for Syntax-check
 
 ## Release Notes
 #### 1.3
