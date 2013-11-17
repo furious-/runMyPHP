@@ -29,10 +29,13 @@ class runMyPHP(threading.Thread):
 		sublime.status_message('Processing your code...')
 		#self.output({"output": "Processing...", "title": "runMyPHP"})
 		php = subprocess.Popen(command, cwd=path, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True)
-		result, err = php.communicate()
+		#result, err = php.communicate()
 		#result = subprocess.check_output(command, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
-		self.output({"output": result})
-		sublime.status_message('Done.' + command)
+		result = ""
+		for line in iter(php.stdout.readline, ''):
+			result += str(line)
+			self.output({"output": result})
+		sublime.status_message('Done.')
 
 	# output workaround, thanks ST3 ¬¬'
 	def output(self, args):
