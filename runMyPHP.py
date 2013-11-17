@@ -24,14 +24,15 @@ class runMyPHP(threading.Thread):
 			path = os.path.realpath(self.view.settings().get('php_path')) + os.sep
 		else: path = ''
 
-		command = '"%(path)sphp" -r "%(code)s"' % {"path": path, "code": self.process(code)}
+		command = '"%(path)sphp" -r "%(code)s"' % {'path': path, 'code': self.process(code)}
 
-		self.output({"output": "Processing...", "title": "runMyPHP"})
-		#php = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
-		#result, err = php.communicate()
-		result = subprocess.check_output(command, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
+		sublime.status_message('Processing your code...')
+		#self.output({"output": "Processing...", "title": "runMyPHP"})
+		php = subprocess.Popen(command, cwd=path, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True)
+		result, err = php.communicate()
+		#result = subprocess.check_output(command, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 		self.output({"output": result})
-		sublime.status_message('Done.')
+		sublime.status_message('Done.' + command)
 
 	# output workaround, thanks ST3 ¬¬'
 	def output(self, args):
@@ -49,7 +50,6 @@ class RunmyphpCommand(sublime_plugin.TextCommand):
 			selection = self.view.substr(sublime.Region(0, self.view.size()))
 		
 		if self.show():
-			sublime.status_message('Processing your code...')
 			thread = runMyPHP(selection)
 			thread.start()
 		else:
