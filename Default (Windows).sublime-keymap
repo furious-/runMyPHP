@@ -1,3 +1,8 @@
 [
-	{ "keys": ["ctrl+shift+x"], "command": "runmyphp" }
+	{ "keys": ["ctrl+shift+x"], "command": "runmyphp" },
+	{ "keys": ["ctrl+shift+alt+x"], "command": "runmyphp", "args": {"entirecode": true} },
+	{ "keys": ["ctrl+shift+l"], "command": "runmyphp", "args": {"lint": true} },
+	{ "keys": ["ctrl+shift+alt+l"], "command": "runmyphp", "args": {"lint": true, "entirecode": true} },
+	{ "keys": ["ctrl+shift+alt+c"], "command": "runmyphp", "args": {"lint": true, "currentfile": true} },
+	{ "keys": ["ctrl+shift+c"], "command": "runmyphp", "args": {"currentfile": true} }
 ]

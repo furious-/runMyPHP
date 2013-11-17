@@ -1,0 +1,9 @@
+{
+	// Set here the full path to your PHP binary, for portable installations use the root path
+	// without the drive letter: "/root/full_path/to/php"
+	"runmyphp_binary_path": "",
+	
+	// If you want to always use a temporary file to execute partial/full (not saved) code,
+	// that way you can debug errors and find the correct line of the problem. (Syntax check always use temp files)
+	"runmyphp_with_tmp_file": true
+}

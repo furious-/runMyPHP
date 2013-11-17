@@ -1,6 +1,13 @@
 [
-    {
-        "caption": "runMyPHP",
-        "command": "runmyphp"
-    }
+	{
+		"caption": "runMyPHP",
+		"children": 
+		[
+			{"caption": "Run PHP code", "command": "runmyphp"},
+			{"caption": "Run entire PHP code", "command": "runmyphp", "args": {"entirecode": true}},
+			{"caption": "Run current PHP file", "command": "runmyphp", "args": {"currentfile": true}},
+			{"caption": "Syntax-Check only (Code)", "command": "runmyphp", "args": {"lint": true}},
+			{"caption": "Syntax-Check only (File)", "command": "runmyphp", "args": {"currentfile": true, "lint": true}}
+		]
+	}
 ]

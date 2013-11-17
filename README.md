@@ -14,7 +14,7 @@ To install this Plugin via git, simply browse to your 'Packages' folder like thi
 > cd ~/Library/Application Support/Sublime Text 3/Packages
 
 **for Linux**
-> cd ~/.Sublime Text 2/Packages
+> cd ~/.Sublime Text 3/Packages
 
 **for Portable Installations**
 > cd PATH_TO_PORTABLE_INSTALLATION/Sublime Text 3/Data/Packages
@@ -29,22 +29,45 @@ To install this Plugin via git, simply browse to your 'Packages' folder like thi
 * Copy the folder to your Sublime Text 3 'Packages' directory
 
 ## Settings
-The following settings are available and optional, but the default settings should be mostly what you want if you install this plugin
+The following settings are available and are optional, but the default settings should be changed
 	
 	{
-		"php_path": "YOUR_PHP_BINARY_PATH",
+		"runmyphp_binary_path": "",
+		"runmyphp_with_tmp_file": true
 	}
 
-**php_path**: The FULL path to your PHP binary (for portable, just remove the drive letter)
+**runmyphp_binary_path**: The FULL path to your PHP binary, for portable installations use the root path without the drive letter, like: "/root/full_path/to/php"
+
+**runmyphp_with_tmp_file**: If you want to always use a temporary file to execute partial/full (not saved) code, that way you can debug errors and find the correct line of the problem. (Syntax check always use temp files)
 
 ## Usage
-If the PHP syntax is active, select the piece of code you want to get an output from, or if you want the whole file be used left the selection blank, and press this shortcut:
+This plugin only works when the PHP syntax is active, check bellow the shortcuts, or use the context menu with rightclick:
 
-	Ctrl+Shift+X
-
-Rightclick in the document and you can do the same above
+	**Ctrl+Shift+X** - Execute the selected piece of code or the entire code.
+	**Ctrl+Shift+Alt+X** - Same above, but execute the entire code instead.
+	**Ctrl+Shift+C** - Execute the current opened file. (It will warn you to save the file if it was changed before execute)
+	**Ctrl+Shift+L** - Check the for Syntax errors in the selected or entire code.
+	**Ctrl+Shift+Alt+L** - Same above, but ignores selection and uses the entire code instead.
+	**Ctrl+Shift+Alt+C** - Same thing above, but this time uses the current opened file for Syntax-check
 
 ## Release Notes
+#### 1.3
+* Added more shortcuts
+* Added "Syntax-Check" (lint) option
+* Added "Run PHP file" option
+* Added default sublime-settings
+* Better thread PHP execution
+* Better output real-time
+
+#### 1.2
+* Improved output real-time
+* Improved thread PHP execution
+
+#### 1.1
+* Added threading-mode
+* Improved plugin code
+
+#### 1.0 (beta)
 This is an initial version, so can have some bugs. And it's my first time making a plugin for ST3, and my second day programming python :P
 
 ### Contact
