@@ -58,9 +58,9 @@ class runMyPHP(threading.Thread):
 
 	# output workaround, thanks ST3 ¬¬'
 	def output(self, args):
-		self.view.window().run_command("runmyphpoutput", args)
+		self.view.window().run_command("runmyphp_output", args)
 
-class runMyPHPCommand(sublime_plugin.TextCommand):
+class runmyphpCommand(sublime_plugin.TextCommand):
 	def run(self, edit, lint = False, currentfile = False, entirecode = False):
 		self.edit = edit
 		
@@ -88,7 +88,7 @@ class runMyPHPCommand(sublime_plugin.TextCommand):
 			return view.settings().get('syntax') == 'Packages/PHP/PHP.tmLanguage'
 
 # output workaround, thanks ST3 ¬¬'
-class runMyPHPOutputCommand(sublime_plugin.TextCommand):
+class runmyphpOutputCommand(sublime_plugin.TextCommand):
 	def run(self, edit, output, multiline = False, title = 'Results:', panel_name = 'runMyPHP'):
 		self.edit = edit
 		if multiline or "\n" in output:
